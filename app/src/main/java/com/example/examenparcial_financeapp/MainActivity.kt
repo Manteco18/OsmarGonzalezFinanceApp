@@ -1,0 +1,93 @@
+package com.example.examenparcial_financeapp
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material3.Icon
+import androidx.compose.material3.LeadingIconTab
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.example.examenparcial_financeapp.ui.theme.ExamenParcial_FinanceAppTheme
+
+
+@Composable
+fun NewsScreen() {
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
+            .padding(horizontal = 16.dp)
+            .verticalScroll(rememberScrollState()) // Permite scroll en toda la pantalla
+    ) {
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row(
+
+            modifier = Modifier.fillMaxWidth(1f),
+            horizontalArrangement = Arrangement.SpaceBetween
+
+        ) {
+            Icon(
+                imageVector = Icons.Default.AccountCircle,
+                contentDescription = null,
+                modifier = Modifier.size(50.dp).clip(CircleShape).background(Color(0xFFFFE0B2)),
+
+            )
+
+            Column(
+                modifier = Modifier
+                    .weight(1f)   //  empuja el icono derecho
+                    .padding(horizontal = 10.dp)
+            ) {
+
+                Text("Hola Osmar",
+                    fontSize = 25.sp
+                )
+
+                Text("Bienvenido"
+                    )
+            }
+
+            Icon(
+                imageVector = Icons.Default.Menu,
+                contentDescription = null,
+                modifier = Modifier.size(50.dp)
+            )
+
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    ExamenParcial_FinanceAppTheme {
+        NewsScreen()
+    }
+}

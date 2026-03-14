@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Grises -->
+    <color name="gray_light">#FFD3D3D3</color>
+    <color name="gray">#FF808080</color>
+    <color name="gray_dark">#FF404040</color>
+
+    <!-- Rojos -->
+    <color name="red_light">#FFFFCDD2</color>
+    <color name="red">#FFF44336</color>
+    <color name="red_dark">#FFD32F2F</color>
+
+    <!-- Azules -->
+    <color name="blue_light">#FFBBDEFB</color>
+    <color name="blue">#FF2196F3</color>
+    <color name="blue_dark">#FF1976D2</color>
+
+    <!-- Verdes -->
+    <color name="green_light">#FFC8E6C9</color>
+    <color name="green">#FF4CAF50</color>
+    <color name="green_dark">#FF2E7D32</color>
+
+    <!-- Amarillos -->
+    <color name="yellow_light">#FFFFF9C4</color>
+    <color name="yellow">#FFFFEB3B</color>
+    <color name="yellow_dark">#FFFBC02D</color>
+
+    <!-- Naranjas -->
+    <color name="orange_light">#FFFFE0B2</color>
+    <color name="orange">#FFFF9800</color>
+    <color name="orange_dark">#FFF57C00</color>
+
+</resources>
