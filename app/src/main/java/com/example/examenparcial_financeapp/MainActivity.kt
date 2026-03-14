@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -44,6 +45,17 @@ data class Transaction(
     val amount: Double,
     val time: String,
     val icon: Int
+)
+
+val transactions = listOf(
+
+    Transaction("Supermarket", "Groceries", 45.99, "10:30 AM", 0),
+    Transaction("Gas Station", "Fuel", -30.5, "12:15 PM", 0),
+    Transaction("Coffee Shop", "Food & Drinks", 5.75, "8:00 AM", 0),
+    Transaction("Electronics Store", "Electronics", 120.0, "3:45 PM", 0),
+    Transaction("Bookstore", "Books", 25.99, "2:00 PM", 0),
+    Transaction("Restaurant", "Dining", 60.0, "7:30 PM", 0)
+
 )
 @Composable
 fun NewsScreen() {
@@ -220,6 +232,62 @@ fun NewsScreen() {
                 text = "See all",
                 color = Color.Gray
             )
+        }
+        Column(//lista
+
+        ) {
+            for (transaction in transactions){
+
+                Spacer(modifier = Modifier.height(10.dp))
+
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .background(Color(0xFFF2F2F2), RoundedCornerShape(20.dp))
+                        .padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Icon(
+                        imageVector = Icons.Default.ShoppingCart,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(40.dp)
+                            .background(Color.Black, CircleShape)
+                            .padding(8.dp),
+                        tint = Color.White
+                    )
+                    Spacer(modifier = Modifier.width(12.dp))
+
+                    Column(modifier = Modifier.weight(1f)) {
+
+                        Text(
+                            text = transaction.storeName,
+                            fontWeight = FontWeight.Bold
+                        )
+
+                        Text(
+                            text = transaction.category,
+                            color = Color.Gray
+                        )
+                    }
+
+                    Column(
+                        horizontalAlignment = Alignment.End
+                    ) {
+
+                        Text(
+                            text = "$${transaction.amount}",
+                            fontWeight = FontWeight.Bold
+                        )
+
+                        Text(
+                            text = transaction.time,
+                            color = Color.Gray,
+                            fontSize = 12.sp
+                        )
+                    }
+                }
+            }
         }
     }
 }
