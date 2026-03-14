@@ -25,6 +25,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.examenparcial_financeapp.ui.theme.ExamenParcial_FinanceAppTheme
 
+
+
+data class User(
+    val name: String,
+    val balance: Double
+)
+
+data class SummaryCard(
+    val title: String,
+    val amount: Double,
+    val backgroundColor: Color
+)
+
+data class Transaction(
+    val storeName: String,
+    val category: String,
+    val amount: Double,
+    val time: String,
+    val icon: Int
+)
 @Composable
 fun NewsScreen() {
 
@@ -127,7 +147,7 @@ fun NewsScreen() {
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
 
-                // Card ventas
+                // ventas
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -156,7 +176,7 @@ fun NewsScreen() {
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                // Card ganancias
+                // ganancias
                 Card(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -184,10 +204,22 @@ fun NewsScreen() {
                 }
             }
         }
+        Spacer(modifier = Modifier.height(20.dp))
+
         Row(
-
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
         ) {
+            Text(
+                text = "Transactions",
+                fontSize = 25.sp
+            )
 
+            Text(
+                text = "See all",
+                color = Color.Gray
+            )
         }
     }
 }
